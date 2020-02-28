@@ -1,0 +1,40 @@
+<div class="container">
+  <h1>Keyword Extractor</h1>
+  <form *ngIf="urls" action="https://www.folivoras.com/" >
+    <div *ngFor="let url of urls; index as i" class="form-group">
+      <label >URL {{i+1}}:</label>
+      <input
+        type="text"
+        name="url{{i+1}}"
+        id="url{{i+1}}"
+        class="form-control"
+        placeholder="{{url}}"
+        ngModel
+      />
+    </div>
+
+    <button type="button" (click)="getKeywords()" class="btn btn-primary">Search keywords</button>
+  </form>
+
+  <hr>
+    <table *ngIf="keywords" datatable [dtOptions]="dtOptions" class="table table-striped" class="table">
+      <thead>
+        <tr>
+          <th scope="col">Keyword</th>
+          <th scope="col">Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let keyword of keywords">
+          <td>{{keyword.text}}</td>
+          <td>{{keyword.score}}</td>
+        </tr>
+
+
+      </tbody>
+    </table>
+
+
+
+
+</div>
