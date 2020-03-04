@@ -25,7 +25,7 @@ export class KeywordExtractorComponent implements OnInit {
         url: "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
       },
       paging: true,
-      ordering: true,
+      order: [[ 1, "desc" ]],
       pagingType: "simple_numbers",
       dom: "Bflrtip"
 
